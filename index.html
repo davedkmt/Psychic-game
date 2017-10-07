@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8">
+  <title>Psychic Game</title>
+
+  <link href="reset.css" type="css/text" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="psychic.css">
+
+
+</head>
+<body >
+
+
+
+<div class="col-md-4, position">
+
+<h1>What Letter Am I Guessing?</h1>
+<h2>Press a-z to play</h2>
+<br>
+<h2 id="yourguess"></h2>
+<h2 id="computerchoice"></h2>
+<h2 id="point">Point:</h2>
+<h2 id="life">Guesses Left:</h2>
+
+</div>
+<script type="text/javascript">
+
+
+var word = ['a','b','c','d','e','f','g','h','i','j','k','l',
+ 'm','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+
+
+
+var life = 10;
+var point = 0;
+
+document.onkeyup = function(event) {
+
+var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
+
+  var computerChoice = word[Math.floor(Math.random() * word.length)];
+  document.getElementById("computerchoice").innerHTML = "Computer chose: " + computerChoice;
+
+  console.log(computerChoice);
+  document.getElementById("yourguess").innerHTML = "You Guessed: " + userGuess;
+
+ if(userGuess === computerChoice){
+     point++;
+      document.getElementById("point").innerHTML = "Point: " + point;
+ }
+else {
+     life--;
+     document.getElementById("life").innerHTML = "Guesses Left: " + life;
+ }
+
+
+ if (life == 0){
+     alert("Game Over!");
+     life=10;
+     point=0;
+
+ }
+
+
+
+
+ }
+
+
+</script>
+</body>
+
+</html>
