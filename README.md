@@ -10,3 +10,4 @@ Guesses Left: (# of guesses left)
 
 Your Guesses So Far: (the specific letters that the user typed)
 
+Link to the app: https://davedkmt.github.io/Psychic-game/
